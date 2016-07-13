@@ -1,0 +1,88 @@
+{
+  "name": "Express-React-Router-Redux-Server-example",
+  "version": "0.0.1",
+  "private": true,
+  "description": "\u0016This is an Express app using react, redux, react-router, Es6, and server rendering.",
+  "main": "./app/dist/server.js",
+  "scripts": {
+    "mongo": "cd /c/MongoDB/Server/3.2/bin && ./mongod",
+    "build": "babel ./app/src -d ./app/dist && webpack -p --progress",
+    "serve": "node ./app/dist/server.js",
+    "test": "mocha --compilers js:babel-register",
+    "start": "npm run build && npm run serve",
+    "dev-server": "nodemon ./app/src/server.js --exec babel-node --presets es2015,stage-2",
+    "dev-webpack": "webpack --watch --progress -d --config webpack.config.dev.js",
+    "dev1": "npm run dev-server",
+    "dev2": "npm run dev-webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orYoffe/Express-React-Router-Redux-Server-example.git"
+  },
+  "keywords": [
+    "express",
+    "react",
+    "redux",
+    "react router",
+    "server side rendering",
+    "universal",
+    "isomorphic",
+    "example"
+  ],
+  "engines": {
+    "node": "6.2.2"
+  },
+  "author": "Or Yoffe <ragiop07@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orYoffe/Express-React-Router-Redux-Server-example/issues"
+  },
+  "homepage": "https://github.com/orYoffe/Express-React-Router-Redux-Server-example#readme",
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.13.4",
+    "express-handlebars": "^3.0.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "helmet": "^2.1.1",
+    "import": "0.0.6",
+    "jsonwebtoken": "^7.0.1",
+    "mongoose": "^4.5.3",
+    "morgan": "~1.7.0",
+    "nodemon": "^1.9.2",
+    "react": "^15.2.1",
+    "react-bootstrap": "^0.29.5",
+    "react-dom": "^15.2.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.5.2",
+    "react-router-redux": "^4.0.5",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-2": "^6.11.0",
+    "browser-sync": "^2.13.0",
+    "browser-sync-webpack-plugin": "^1.1.0",
+    "css-loader": "^0.23.1",
+    "eslint": "^3.0.1",
+    "eslint-loader": "^1.4.1",
+    "file-loader": "^0.9.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "mocha": "^2.5.3",
+    "node-sass": "^3.8.0",
+    "postcss-loader": "^0.9.1",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
