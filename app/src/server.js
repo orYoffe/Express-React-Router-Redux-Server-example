@@ -5,7 +5,6 @@ import morgan from 'morgan'
 import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
 import hbs from 'express-handlebars'
-import config from './config'
 import {renderFullPage, normalizePort, onError} from './config/initHelpers'
 
 import React from 'react'
@@ -33,12 +32,6 @@ if(folderName !== '/src' && folderName === 'dist'){
 const app = express()
 
 app.use(helmet())
-// TODO uncomment when using db
-// import mongoose from 'mongoose'
-// mongoose.connect(config.getDb())
-// const db = mongoose.connection
-// db.on('error', console.error.bind(console, 'connection error:'))
-// db.once('open', console.error.bind(console, 'Connected to the db'))
 
 app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts/'}))
 app.set('views', path.join(__dirname, 'views'))
@@ -49,7 +42,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'client/public')))
-app.set('superSecret', config.getSecret())
 
 app.use('*', function timeLog(req, res, next) {
   console.log('Time: ', new Date(Date.now()).toUTCString())
